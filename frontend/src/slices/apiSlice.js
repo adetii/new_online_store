@@ -2,7 +2,7 @@ import { fetchBaseQuery, createApi } from '@reduxjs/toolkit/query/react';
 
 // Update the baseQuery to use the correct configuration
 const baseQuery = fetchBaseQuery({
-  baseUrl: '',  // Empty string to use relative URLs with the proxy
+  baseUrl: 'https://online-shop-backend-a3s6.onrender.com',  // Empty string to use relative URLs with the proxy
   credentials: 'include',
 });
 

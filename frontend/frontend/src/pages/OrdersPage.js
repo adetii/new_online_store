@@ -6,7 +6,7 @@ import Loader from '../components/layout/Loader';
 import Message from '../components/layout/Message';
 import { FaArrowLeft, FaEye, FaTimes } from 'react-icons/fa';
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
 
 const OrdersPage = () => {
   const navigate = useNavigate();

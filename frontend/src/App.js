@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Outlet, Navigate } from 'react-
 import { Toaster } from 'react-hot-toast';
 import { ToastContainer } from 'react-toastify';
 import { useSelector } from 'react-redux';
-import 'react-toastify/dist/ReactToastify.css';
+
 
 import { initSessionTracking, clearSessionTimer } from './utils/sessionUtils';
 import ScrollToTop from './components/utils/ScrollToTop';
