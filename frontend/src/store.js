@@ -7,6 +7,17 @@ import { usersApiSlice } from './slices/usersApiSlice';
 import { ordersApiSlice } from './slices/ordersApiSlice';
 import { adminApiSlice } from './slices/adminApiSlice';
 
+// Create a middleware array with unique middleware instances
+const apiMiddleware = [
+  productsApiSlice.middleware,
+  usersApiSlice.middleware,
+  ordersApiSlice.middleware,
+  adminApiSlice.middleware,
+];
+
+// Remove duplicates by converting to Set and back to Array
+const uniqueMiddleware = [...new Set(apiMiddleware)];
+
 const store = configureStore({
   reducer: {
     cart: cartReducer,
@@ -17,15 +28,10 @@ const store = configureStore({
     [adminApiSlice.reducerPath]: adminApiSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware()
-      .concat(productsApiSlice.middleware)
-      .concat(usersApiSlice.middleware)
-      .concat(ordersApiSlice.middleware)
-      .concat(adminApiSlice.middleware),
+    getDefaultMiddleware().concat(uniqueMiddleware),
   devTools: process.env.NODE_ENV !== 'production',
 });
 
-// optional, but required for refetchOnFocus/refetchOnReconnect behaviors
 setupListeners(store.dispatch);
 
 export default store;
