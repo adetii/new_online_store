@@ -1,8 +1,11 @@
 import { fetchBaseQuery, createApi } from '@reduxjs/toolkit/query/react';
 
-// Update the baseQuery to use the correct configuration
+// Get the API base URL from environment variables
+const baseUrl = process.env.REACT_APP_API_BASE_URL || '';
+
+// Create the base query with the environment variable
 const baseQuery = fetchBaseQuery({
-  baseUrl: 'https://shopname.onrender.com',  // Empty string to use relative URLs with the proxy
+  baseUrl,
   credentials: 'include',
 });
 
