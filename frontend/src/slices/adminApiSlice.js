@@ -4,7 +4,7 @@ export const adminApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getDashboardStats: builder.query({
       query: () => ({
-        url: 'https://shopname.onrender.com/api/admin/dashboard',
+        url: '/api/admin/dashboard',
         method: 'GET',
       }),
       keepUnusedDataFor: 5 * 60, // 5 minutes in seconds
@@ -12,14 +12,14 @@ export const adminApiSlice = apiSlice.injectEndpoints({
     // Add user management endpoints
     getUsers: builder.query({
       query: () => ({
-        url: 'https://shopname.onrender.com/api/users',
+        url: '/api/users',
         method: 'GET',
       }),
       keepUnusedDataFor: 5,
     }),
     getUserDetails: builder.query({
       query: (id) => ({
-        url: `https://shopname.onrender.com/api/users/${id}`,
+        url: `/api/users/${id}`,
         method: 'GET',
       }),
       keepUnusedDataFor: 5,
@@ -33,7 +33,7 @@ export const adminApiSlice = apiSlice.injectEndpoints({
     }),
     deleteUser: builder.mutation({
       query: (id) => ({
-        url: `https://shopname.onrender.com/api/users/${id}`,
+        url: `/api/users/${id}`,
         method: 'DELETE',
       }),
     }),
