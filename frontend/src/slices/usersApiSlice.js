@@ -1,6 +1,6 @@
 import { apiSlice } from './apiSlice';
 
-const USERS_URL = 'https://shopname.onrender.com/api/users';
+const USERS_URL = '/api/users';
 
 export const usersApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
