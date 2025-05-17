@@ -1,13 +1,13 @@
 import { apiSlice } from './apiSlice';
 
-const PRODUCTS_URL = 'https://shopname.onrender.com/api/products';
+const PRODUCTS_URL = '/api/products';
 
 export const productsApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getProducts: builder.query({
       query: ({ keyword = '', pageNumber = 1, category = '' }) => {
         return {
-          url: 'https://shopname.onrender.com/api/products',
+          url: '/api/products',
           params: { 
             keyword, 
             pageNumber, 
@@ -21,14 +21,14 @@ export const productsApiSlice = apiSlice.injectEndpoints({
     getProductDetails: builder.query({
       // Fix this endpoint to include /api prefix
       query: (productId) => ({
-        url: `https://shopname.onrender.com/api/products/${productId}`,
+        url: `/api/products/${productId}`,
       }),
       keepUnusedDataFor: 5,
     }),
     createReview: builder.mutation({
       // Fix this endpoint to include /api prefix
       query: (data) => ({
-        url: `https://shopname.onrender.com/api/products/${data.productId}/reviews`,
+        url: `/api/products/${data.productId}/reviews`,
         method: 'POST',
         body: data,
       }),
@@ -36,7 +36,7 @@ export const productsApiSlice = apiSlice.injectEndpoints({
     // Fix all other endpoints to include /api prefix
     createQuestion: builder.mutation({
       query: (data) => ({
-        url: `https://shopname.onrender.com/api/products/${data.productId}/questions`,
+        url: `/api/products/${data.productId}/questions`,
         method: 'POST',
         body: data,
       }),
@@ -65,7 +65,7 @@ export const productsApiSlice = apiSlice.injectEndpoints({
     }),
     uploadProductImage: builder.mutation({
       query: (data) => ({
-        url: 'https://shopname.onrender.com/api/products/upload',
+        url: '/api/products/upload',
         method: 'POST',
         body: data,
       }),
@@ -92,7 +92,7 @@ export const productsApiSlice = apiSlice.injectEndpoints({
     // Rename this endpoint to avoid conflict
     getAllProductsAdmin: builder.query({
       query: () => ({
-        url: `https://shopname.onrender.com/api/products`,
+        url: `/api/products`,
       }),
       providesTags: ['Products'],
       keepUnusedDataFor: 5,
