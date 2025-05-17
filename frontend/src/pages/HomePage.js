@@ -95,7 +95,7 @@ const HomePage = () => {
 
   // Social media sharing functions
   const shareUrl = window.location.href;
-  const shareTitle = `Check out ${selectedCategory ? selectedCategory + ' products' : 'amazing products'} at The Cowries Shop!`;
+  const shareTitle = `Check out ${selectedCategory ? selectedCategory + ' products' : 'amazing products'} at ShopName!`;
   
   const shareOnFacebook = () => {
     window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, '_blank');
@@ -120,25 +120,25 @@ const HomePage = () => {
   return (
     <>
       <Helmet>
-        <title>{selectedCategory ? `${selectedCategory} Products | The Cowries Shop` : 'The Cowries Shop | Premium Online Shopping'}</title>
+        <title>{selectedCategory ? `${selectedCategory} Products | ShopName` : 'ShopName | Premium Online Shopping'}</title>
         <meta name="description" content={`Discover ${selectedCategory ? selectedCategory + ' products' : 'the best products'} at competitive prices. Shop now at The Cowries Shop!`} />
-        <meta property="og:title" content={`${selectedCategory ? selectedCategory + ' Products | ' : ''}The Cowries Shop`} />
+        <meta property="og:title" content={`${selectedCategory ? selectedCategory + ' Products | ' : ''}ShopName`} />
         <meta property="og:description" content={`Discover ${selectedCategory ? selectedCategory + ' products' : 'the best products'} at competitive prices. Shop now!`} />
         <meta property="og:url" content={shareUrl} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/THE_COWRIES_PNG-01.png" />
+        <meta property="og:image" content="/favicon.ico" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${selectedCategory ? selectedCategory + ' Products | ' : ''}The Cowries Shop`} />
+        <meta name="twitter:title" content={`${selectedCategory ? selectedCategory + ' Products | ' : ''}ShopName`} />
         <meta name="twitter:description" content={`Discover ${selectedCategory ? selectedCategory + ' products' : 'the best products'} at competitive prices. Shop now!`} />
-        <meta name="twitter:image" content="/THE_COWRIES_PNG-01.png" />
-        <meta name="keywords" content={`online shopping, e-commerce, ${selectedCategory || 'products'}, The Cowries Shop, Ghana shopping`} />
+        <meta name="twitter:image" content="/favicon.ico" />
+        <meta name="keywords" content={`online shopping, e-commerce, ${selectedCategory || 'products'}, ShopName, Ghana shopping`} />
         
         {/* JSON-LD structured data for better SEO */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebSite",
-            "name": "The Cowries Shop",
+            "name": "ShopName",
             "url": window.location.origin,
             "potentialAction": {
               "@type": "SearchAction",

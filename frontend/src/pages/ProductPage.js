@@ -157,7 +157,7 @@ const ProductPage = () => {
 
   // Social media sharing functions
   const shareUrl = window.location.href;
-  const shareTitle = `Check out ${product?.name} at The Cowries Shop!`;
+  const shareTitle = `Check out ${product?.name} at ShopName!`;
   
   const shareOnFacebook = () => {
     window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, '_blank');
@@ -190,24 +190,24 @@ const ProductPage = () => {
       ) : (
         <>
           <Helmet>
-            <title>{`${product.name} | The Cowries Shop`}</title>
-            <meta name="description" content={product.description ? product.description.substring(0, 160) : `Buy ${product.name} at The Cowries Shop`} />
+            <title>{`${product.name} | ShopName`}</title>
+            <meta name="description" content={product.description ? product.description.substring(0, 160) : `Buy ${product.name} at ShopName`} />
             
             {/* Open Graph tags for social sharing */}
-            <meta property="og:title" content={`${product.name} | The Cowries Shop`} />
-            <meta property="og:description" content={product.description ? product.description.substring(0, 160) : `Buy ${product.name} at The Cowries Shop`} />
+            <meta property="og:title" content={`${product.name} | ShopName`} />
+            <meta property="og:description" content={product.description ? product.description.substring(0, 160) : `Buy ${product.name} at ShopName`} />
             <meta property="og:url" content={window.location.href} />
             <meta property="og:type" content="product" />
             <meta property="og:image" content={product.image} />
             
             {/* Twitter Card tags */}
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content={`${product.name} | The Cowries Shop`} />
-            <meta name="twitter:description" content={product.description ? product.description.substring(0, 160) : `Buy ${product.name} at The Cowries Shop`} />
+            <meta name="twitter:title" content={`${product.name} | ShopName`} />
+            <meta name="twitter:description" content={product.description ? product.description.substring(0, 160) : `Buy ${product.name} at ShopName`} />
             <meta name="twitter:image" content={product.image} />
             
             {/* Product-specific keywords */}
-            <meta name="keywords" content={`${product.name}, ${product.category}, ${product.brand}, online shopping, The Cowries Shop, Ghana shopping`} />
+            <meta name="keywords" content={`${product.name}, ${product.category}, ${product.brand}, online shopping, ShopName, Ghana shopping`} />
             
             {/* JSON-LD structured data for product */}
             <script type="application/ld+json">

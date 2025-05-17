@@ -1,6 +1,6 @@
 {
-  "short_name": "The Cowries",
-  "name": "The Cowries Shop",
+  "short_name": "ShopName",
+  "name": "ShopName",
   "icons": [
     {
       "src": "favicon-16x16.png",

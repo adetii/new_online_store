@@ -192,13 +192,13 @@ const Header = () => {
       <div className="relative flex items-center h-12 px-4" ref={categoryRef}>
         <button
           onClick={() => setIsCategoryOpen(!isCategoryOpen)}
-          className={`flex items-center text-white hover:text-secondary px-3 py-2 rounded-md font-bold transition duration-300 ${
-            isCategoryOpen ? 'bg-gray-700' : ''
+          className={`flex items-center text-white hover:hover:text-blue-500 px-3 py-2 rounded-md font-bold transition duration-300 ${
+            isCategoryOpen ? 'bg-gray-200' : ''
           }`}
         >
-          <span className= "text-xl">Categories</span>
+          <span className="text-xl">Categories</span>
           <FaChevronDown
-            className={`ml-1 transition-transform ${isCategoryOpen ? 'rotate-180' : ''}`}
+            className={`ml-5 transition-transform ${isCategoryOpen ? 'rotate-180' : ''}`}
           />
         </button>
         {isCategoryOpen && (

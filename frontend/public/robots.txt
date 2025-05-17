@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://shonepname.vercel.app/sitemap.xml
+Sitemap: https://shopname.netlify.app/sitemap.xml
