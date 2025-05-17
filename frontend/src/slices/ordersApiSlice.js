@@ -1,6 +1,6 @@
 import { apiSlice } from './apiSlice';
 
-const ORDERS_URL = '/api/orders';
+const ORDERS_URL = 'https://shopname.onrender.com/api/orders';
 
 export const ordersApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
