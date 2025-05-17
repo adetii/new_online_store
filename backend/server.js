@@ -56,14 +56,27 @@ app.use(morgan((tokens, req, res) => {
 // Middlewares 
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true })); 
-app.use(cookieParser()); 
+app.use(cookieParser());
 
-// Updated CORS configuration
-app.use(cors({
-  origin: process.env.FRONTEND_URL || 'https://your-frontend-domain.vercel.app',
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+// Production CORS configuration
+const allowedOrigins = [
+  'https://shopname.onrender.com' // Your frontend URL
+]; 
+
+app.use(cors({ 
+  origin: function(origin, callback) { 
+    // Allow requests with no origin (like mobile apps, curl, etc) 
+    if (!origin) return callback(null, true); 
+    
+    if (allowedOrigins.indexOf(origin) === -1) { 
+      const msg = 'The CORS policy for this site does not allow access from the specified Origin.'; 
+      return callback(new Error(msg), false); 
+    }
+    return callback(null, true); 
+  }, 
+  credentials: true, 
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'], 
+  allowedHeaders: ['Content-Type', 'Authorization'] 
 }));
 
 // Static files 
