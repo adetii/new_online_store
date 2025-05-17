@@ -71,6 +71,14 @@ app.use('/api/admin', adminRoutes);
 app.use('/api/upload', uploadRoutes);
 app.use('/api/contact', contactRoutes);
 
+// Serve static files from the React build folder
+app.use(express.static(path.join(__dirname, '../frontend/build')));
+
+// Catch-all route to serve React's index.html for any route not handled by the API
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
+});
+
 // Error handlers
 app.use(notFound);
 app.use(errorHandler);
