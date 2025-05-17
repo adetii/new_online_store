@@ -4,14 +4,14 @@ export const wishlistApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getWishlist: builder.query({
       query: () => ({
-        url: 'https://shopname.onrender.com/api/wishlist',
+        url: '/api/wishlist',
       }),
       keepUnusedDataFor: 5,
       providesTags: ['Wishlist'],
     }),
     addToWishlist: builder.mutation({
       query: (productId) => ({
-        url: 'https://shopname.onrender.com/api/wishlist',
+        url: '/api/wishlist',
         method: 'POST',
         body: { productId },
       }),
@@ -19,7 +19,7 @@ export const wishlistApiSlice = apiSlice.injectEndpoints({
     }),
     removeFromWishlist: builder.mutation({
       query: (productId) => ({
-        url: `https://shopname.onrender.com/api/wishlist/${productId}`,
+        url: `/api/wishlist/${productId}`,
         method: 'DELETE',
       }),
       invalidatesTags: ['Wishlist'],
