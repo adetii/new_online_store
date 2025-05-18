@@ -1,13 +1,12 @@
 import { fetchBaseQuery, createApi } from '@reduxjs/toolkit/query/react';
 
-// Use environment variables to handle different environments
-const baseUrl = process.env.NODE_ENV === 'production'
-  ? '' // In production, prepend "/api" so requests go to `https://shopname.onrender.com/api/…`
-  : '';    // In development, leave it empty so fetch('/api/…') proxies to your local server
+const API_URL = process.env.REACT_APP_API_URL;  // e.g. https://my-backend.onrender.com
 
 const baseQuery = fetchBaseQuery({
-  baseUrl,
-  credentials: 'include',  // send cookies (e.g. for auth) on same‑origin/API calls
+  baseUrl: process.env.NODE_ENV === 'production'
+    ? API_URL            // calls go to https://<backend>/api/…
+    : '',                // calls go to /api/… (CRA dev proxy)
+  credentials: 'include',
 });
 
 export const apiSlice = createApi({
