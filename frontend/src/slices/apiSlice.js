@@ -3,6 +3,8 @@ import { fetchBaseQuery, createApi } from '@reduxjs/toolkit/query/react';
 // Base URL from environment
 const API_URL = process.env.REACT_APP_API_URL;  // e.g. https://my-backend.onrender.com
 
+const baseApiUrl = API_URL || window.location.origin;
+
 const baseQuery = fetchBaseQuery({
   baseUrl:
     process.env.NODE_ENV === 'production'
