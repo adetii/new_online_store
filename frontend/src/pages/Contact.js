@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
--import { showSuccessToast, showErrorToast } from '../utils/toastUtils';
-+import { showSuccessToast, showErrorToast } from '../utils/toastUtils';
+import { showSuccessToast, showErrorToast } from '../utils/toastUtils';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
--import axios from 'axios';
--import Loader from '../components/ui/Loader';
-+import axios from 'axios';
-+import Loader from '../components/ui/Loader';
+import axios from 'axios';
+import Loader from '../components/ui/Loader';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -44,8 +41,7 @@ const Contact = () => {
         timeout: 10000,            // 10s timeout
       };
       
--      await axios.post('/api/contact', formData, config);
-+      await axios.post('/api/contact', formData, config);
+      await axios.post('/api/contact', formData, config);
       
       showSuccessToast('Message sent successfully! We will get back to you soon.');
       
