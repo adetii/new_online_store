@@ -5,7 +5,7 @@ const SEO = ({
   title, 
   description, 
   keywords = '', 
-  image = '/THE_COWRIES_PNG-01.png',
+  image = '/favicon.ico',
   url,
   type = 'website',
   structuredData = null
