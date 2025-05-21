@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://shopname.netlify.app/sitemap.xml
+Sitemap: https://shopname.onrender.com/sitemap.xml
