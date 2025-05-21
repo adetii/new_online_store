@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://shopname.netlify.app</loc>
+    <loc>https://shopname.onrender.com</loc>
     <lastmod>2023-08-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://shopname.netlify.app/cart</loc>
+    <loc>https://shopname.onrender.com/cart</loc>
     <lastmod>2023-08-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://shopname.netlify.app/login</loc>
+    <loc>https://shopname.onrender.com/login</loc>
     <lastmod>2023-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://shopname.netlify.app/register</loc>
+    <loc>https://shopname.onrender.com/register</loc>
     <lastmod>2023-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
