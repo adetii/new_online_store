@@ -32,22 +32,19 @@ const LoginPage = () => {
     }
   }, [userInfo, navigate, redirect]);
   
-  // Then in your submitHandler function
+  // Update the submitHandler function
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
       const res = await login({ email, password }).unwrap();
-      dispatch(setCredentials(res));
-      showSuccessToast('Logged in successfully');
       
-      // Redirect based on user role
-      if (res.isAdmin) {
-        navigate('/admin/dashboard');
-      } else {
-        navigate(redirect);
-      }
-    } catch (error) {
-      showErrorToast(error?.data?.message || error.error || 'Login failed');
+      // Pass the complete response including token to setCredentials
+      dispatch(setCredentials(res));
+      
+      showSuccessToast(`Welcome back, ${res.name}!`);
+      navigate(redirect);
+    } catch (err) {
+      showErrorToast(err?.data?.message || err.error);
     }
   };
 
