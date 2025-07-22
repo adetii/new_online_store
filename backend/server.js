@@ -58,26 +58,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true })); 
 app.use(cookieParser());
 
-// Production CORS configuration
-const allowedOrigins = [
-  'https://shopname.onrender.com' // Your frontend URL
-]; 
-
-app.use(cors({ 
-  origin: function(origin, callback) { 
-    // Allow requests with no origin (like mobile apps, curl, etc) 
-    if (!origin) return callback(null, true); 
-    
-    if (allowedOrigins.indexOf(origin) === -1) { 
-      const msg = 'The CORS policy for this site does not allow access from the specified Origin.'; 
-      return callback(new Error(msg), false); 
-    }
-    return callback(null, true); 
-  }, 
-  credentials: true, 
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'], 
-  allowedHeaders: ['Content-Type', 'Authorization'] 
-}));
+  // Development: allow all origins
+  app.use(cors({
+    origin: true,
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+  }));
 
 // Static files 
 app.use('/uploads', express.static(path.join(__dirname, '../uploads'))); 
@@ -89,15 +76,7 @@ app.use('/api/orders', orderRoutes);
 app.use('/api/payments', paymentRoutes); 
 app.use('/api/admin', adminRoutes); 
 app.use('/api/upload', uploadRoutes); 
-app.use('/api/contact', contactRoutes); 
-
-// Serve static files from the React build folder 
-app.use(express.static(path.join(__dirname, '../frontend/build'))); 
-
-// Catch-all route to serve React's index.html for any route not handled by the API 
-app.get('*', (req, res) => { 
-  res.sendFile(path.join(__dirname, '../frontend/build', 'index.html')); 
-}); 
+app.use('/api/contact', contactRoutes);  
 
 // Error handlers 
 app.use(notFound); 
