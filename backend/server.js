@@ -8,6 +8,8 @@ import { fileURLToPath } from 'url';
 import { notFound, errorHandler } from './middleware/errorMiddleware.js'; 
 import connectDB from './config/db.js'; 
 import cors from 'cors'; 
+import helmet from 'helmet';
+import rateLimit from 'express-rate-limit';
 
 // Import routes 
 import productRoutes from './routes/productRoutes.js'; 
@@ -29,6 +31,17 @@ const __dirname = path.dirname(__filename);
 connectDB(); 
 
 const app = express(); 
+// Security middleware
+app.use(helmet());
+
+// Rate limiting
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // limit each IP to 100 requests per windowMs
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+app.use(limiter);
 
 // Helper to pick a color per method 
 function colorMethod(method) { 
