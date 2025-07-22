@@ -34,8 +34,8 @@
     "yup": "^1.6.1"
   },
   "scripts": {
-    "build": "react‑scripts build",
-    "start": "serve -s build -l $PORT"
+    "build": "react-scripts build",
+    "start": "serve -s build -1 $PORT"
   },
   "eslintConfig": {
     "extends": [
